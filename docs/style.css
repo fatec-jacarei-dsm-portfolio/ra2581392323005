@@ -8,7 +8,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #363636;
+  background-color: #171e27;
   color: #f0f0f0;
   display: flex;
   min-height: 100vh;
@@ -16,7 +16,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  background-color: #1e1e1e;
+  background-color: #02040A;
   color: #ffee00;
   width: 300px;
   padding: 2rem 1rem;
@@ -228,10 +228,10 @@ section h2 {
 }
 
 /* Footer */
-footer {
-  margin-top: 4rem;
+/* footer {
+  margin-top: 6rem;
   text-align: center;
   padding: 1rem 0;
   border-top: 1px solid #333;
   color: #888;
-}
+} */
