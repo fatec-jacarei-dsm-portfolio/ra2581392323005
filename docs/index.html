@@ -18,7 +18,13 @@
         <li><a href="#" data-target="contact">Contact</a></li>
       </ul>
     </nav>
-    <button id="lang-switch" style="margin-top:2em;width:100%;padding:0.5em 0;font-size:1em;cursor:pointer;">Português-BR</button>
+    <div class="sidebar-lang-switch">
+      <label class="switch">
+        <input type="checkbox" id="lang-switch" style="display:none;">
+        <span class="slider"></span>
+      </label>
+      <span id="lang-label" style="font-weight:bold;color:#00bcd4;">Language</span>
+    </div>
   </aside>
 
   <main class="content">
@@ -96,8 +102,11 @@
     document.addEventListener('DOMContentLoaded', () => {
       const links = document.querySelectorAll('.sidebar a');
       const sections = document.querySelectorAll('main > section');
-      const langBtn = document.getElementById('lang-switch');
+      const langSwitch = document.getElementById('lang-switch');
       let isPT = false;
+
+  // Get label next to switch
+  const langLabel = document.getElementById('lang-label');
 
       // Language content
       const content = {
@@ -108,7 +117,7 @@
           projectsTitle: 'Principal Works',
           contactTitle: 'Contact',
           contactText: `Feel free to reach out via <a href="mailto:caique.fred@outlook.com">email</a> or connect on <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
-          langBtn: 'Português-BR'
+          langLabel: 'English'
         },
         pt: {
           aboutTitle: 'Sobre Mim',
@@ -117,13 +126,16 @@
           projectsTitle: 'Principais Trabalhos',
           contactTitle: 'Contato',
           contactText: `Fique à vontade para entrar em contato por <a href="mailto:caique.fred@outlook.com">email</a> ou conectar-se no <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
-          langBtn: 'English'
+          langLabel: 'Português-BR'
         }
       };
 
+      // Initial label and switch state
+      langLabel.textContent = content.en.langLabel;
+
       // Language switch logic
-      langBtn.addEventListener('click', () => {
-        isPT = !isPT;
+      langSwitch.addEventListener('change', () => {
+        isPT = langSwitch.checked;
         const lang = isPT ? 'pt' : 'en';
         // About section
         document.querySelector('#about h2').textContent = content[lang].aboutTitle;
@@ -134,8 +146,8 @@
         // Contact section
         document.querySelector('#contact h2').textContent = content[lang].contactTitle;
         document.querySelector('#contact p').innerHTML = content[lang].contactText;
-        // Button text
-        langBtn.textContent = content[lang].langBtn;
+        // Label
+        langLabel.textContent = content[lang].langLabel;
       });
 
       // Navigation logic
