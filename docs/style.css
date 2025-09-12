@@ -17,8 +17,8 @@ body {
 /* Sidebar */
 .sidebar {
   background-color: #1e1e1e;
-  color: #00bcd4;
-  width: 250px;
+  color: #3f8cff;
+  width: 300px;
   padding: 2rem 1rem;
   position: fixed;
   left: 0;
@@ -77,10 +77,11 @@ body {
   transform: translateX(28px);
 }
 .sidebar #lang-switch:hover {
-  background: #b2f5b2;
+  background: #fbff00;
 }
 
 .sidebar #lang-switch .switch-knob {
+  margin-left: 3rem;
   position: absolute;
   top: 4px;
   left: 4px;
@@ -101,17 +102,21 @@ body {
 }
 
 .sidebar h1 {
+  margin-left: 3rem;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
 }
 
 .sidebar p {
+  margin-left: 3rem;
   font-size: 1rem;
   color: #ccc;
   margin-bottom: 2rem;
 }
 
 .sidebar nav ul {
+  margin-top: 1rem;
+  margin-left: 4rem;
   list-style: none;
 }
 
@@ -126,12 +131,13 @@ body {
   transition: color 0.2s;
 }
 
-.sidebar nav ul li a:hover {
+.sidebar nav ul li a:hover { 
   color: #00bcd4;
 }
 
 /* Main content */
 .content {
+  margin-top: 3rem;
   margin-left: 250px;
   padding: 2rem;
   flex: 1;
