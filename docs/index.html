@@ -18,6 +18,7 @@
         <li><a href="#" data-target="contact">Contact</a></li>
       </ul>
     </nav>
+    <button id="lang-switch" style="margin-top:2em;width:100%;padding:0.5em 0;font-size:1em;cursor:pointer;">Português-BR</button>
   </aside>
 
   <main class="content">
@@ -76,11 +77,18 @@
 
     <section id="contact" class="container">
       <h2>Contact</h2>
-      <p>Feel free to reach out via <a href="mailto:caique.fred@outlook.com">email</a> or connect on <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.</p>
+      <div style="margin-top:2em;display:flex;justify-content:center;align-items:center;gap:2em;">
+        <a href="mailto:caique.fred@outlook.com" target="_blank" rel="noopener" title="Send Email">
+          <img src="./assets/mail.png" alt="Mail Icon" style="width:240px;height:240px;vertical-align:middle;">
+        </a>
+        <a href="https://www.linkedin.com/in/caique-moura/" target="_blank" rel="noopener" title="LinkedIn Profile">
+          <img src="./assets/linkedin_qrcode.jpeg" alt="LinkedIn QR Code" style="width:300px;height:300px;border-radius:18px;box-shadow:0 4px 16px #0003;">
+        </a>
+      </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 Caique Moura. All rights reserved.</p>
+      
     </footer>
   </main>
 
@@ -88,12 +96,53 @@
     document.addEventListener('DOMContentLoaded', () => {
       const links = document.querySelectorAll('.sidebar a');
       const sections = document.querySelectorAll('main > section');
+      const langBtn = document.getElementById('lang-switch');
+      let isPT = false;
 
+      // Language content
+      const content = {
+        en: {
+          aboutTitle: 'About Me',
+          about1: `I’m a 4th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications that leverage Natural Language Processing (NLP) and Artificial Intelligence (AI). I'm passionate about creating innovative solutions and turning data into smart, scalable features that drive real impact.`,
+          about2: `I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I conduct projects into natural language processing and artificial intelligence.`,
+          projectsTitle: 'Principal Works',
+          contactTitle: 'Contact',
+          contactText: `Feel free to reach out via <a href="mailto:caique.fred@outlook.com">email</a> or connect on <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
+          langBtn: 'Português-BR'
+        },
+        pt: {
+          aboutTitle: 'Sobre Mim',
+          about1: `Sou estudante do 4º semestre de Desenvolvimento de Software Multiplataforma na Faculdade de Tecnologia do Estado de São Paulo (FATEC/Jacareí). Atualmente trabalho desenvolvendo aplicações que utilizam Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA). Sou apaixonado por criar soluções inovadoras e transformar dados em funcionalidades inteligentes e escaláveis que geram impacto real.`,
+          about2: `Também sou bolsista de iniciação tecnológica no Instituto Nacional de Pesquisas Espaciais (INPE/Brasil), onde realizo projetos em processamento de linguagem natural e inteligência artificial.`,
+          projectsTitle: 'Principais Trabalhos',
+          contactTitle: 'Contato',
+          contactText: `Fique à vontade para entrar em contato por <a href="mailto:caique.fred@outlook.com">email</a> ou conectar-se no <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
+          langBtn: 'English'
+        }
+      };
+
+      // Language switch logic
+      langBtn.addEventListener('click', () => {
+        isPT = !isPT;
+        const lang = isPT ? 'pt' : 'en';
+        // About section
+        document.querySelector('#about h2').textContent = content[lang].aboutTitle;
+        document.querySelectorAll('#about p')[0].textContent = content[lang].about1;
+        document.querySelectorAll('#about p')[1].textContent = content[lang].about2;
+        // Projects section
+        document.querySelector('#projects h2').textContent = content[lang].projectsTitle;
+        // Contact section
+        document.querySelector('#contact h2').textContent = content[lang].contactTitle;
+        document.querySelector('#contact p').innerHTML = content[lang].contactText;
+        // Button text
+        langBtn.textContent = content[lang].langBtn;
+      });
+
+      // Navigation logic
       links.forEach(link => {
         link.addEventListener('click', e => {
           e.preventDefault();
           const targetId = link.getAttribute('data-target');
-
           sections.forEach(section => {
             section.classList.remove('active');
             if (section.id === targetId) {

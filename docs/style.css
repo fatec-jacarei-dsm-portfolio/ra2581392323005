@@ -1,3 +1,4 @@
+
 /* Reset and base styles */
 * {
   margin: 0;
@@ -23,6 +24,23 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
+}
+
+.sidebar #lang-switch {
+  margin-top: 2em;
+  width: 100%;
+  padding: 0.5em 0;
+  font-size: 1em;
+  background: #232323;
+  color: #00bcd4;
+  border: 1px solid #00bcd4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar #lang-switch:hover {
+  background: #00bcd4;
+  color: #232323;
 }
 
 .sidebar h1 {
@@ -66,6 +84,11 @@ body {
   max-width: 960px;
   margin: auto;
   display: none;
+  }
+
+  .container p {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
 }
 
 .container.active {
