@@ -17,9 +17,9 @@ body {
 /* Sidebar */
 .sidebar {
   background-color: #02040A;
-  color: #ffee00;
+  color: #ff0000;
   width: 300px;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   position: fixed;
   left: 0;
   top: 0;
@@ -66,7 +66,7 @@ body {
   width: 24px;
   left: 4px;
   bottom: 4px;
-  background-color: #414eff;
+  background-color: #dfdfdf;
   transition: .4s;
   border-radius: 50%;
   box-shadow: 0 2px 4px #0002;
