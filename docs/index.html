@@ -23,7 +23,8 @@
         <input type="checkbox" id="lang-switch" style="display:none;">
         <span class="slider"></span>
       </label>
-      <span id="lang-label" style="font-weight:bold;color:#00bcd4;">English/Português</span>
+      
+      <span id="lang-label" style="font-weight:bold;color:#ffffff;">English/Português</span>
     </div>
   </aside>
 
@@ -83,13 +84,19 @@
 
     <section id="contact" class="container">
       <h2>Contact</h2>
-      <div style="margin-top:2em;display:flex;justify-content:center;align-items:center;gap:2em;">
-        <a href="mailto:caique.fred@outlook.com" target="_blank" rel="noopener" title="Send Email">
-          <img src="./assets/mail.png" alt="Mail Icon" style="width:240px;height:240px;vertical-align:middle;">
-        </a>
-        <a href="https://www.linkedin.com/in/caique-moura/" target="_blank" rel="noopener" title="LinkedIn Profile">
-          <img src="./assets/linkedin_qrcode.jpeg" alt="LinkedIn QR Code" style="width:300px;height:300px;border-radius:18px;box-shadow:0 4px 16px #0003;">
-        </a>
+      <div style="margin-top:5em;display:flex;justify-content:center;align-items:flex-start;gap:2em;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <a href="mailto:caique.fred@outlook.com" target="_blank" rel="noopener" title="Send Email">
+            <img src="./assets/mail.png" alt="Mail Icon" style="width:300px;height:300px;vertical-align:middle;padding: 20px;">
+          </a>
+          <span style="margin-top:1em;font-size:1.2em;font-weight:bold;color:#ffffff;">E-mail</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <a href="https://www.linkedin.com/in/caique-moura/" target="_blank" rel="noopener" title="LinkedIn Profile">
+            <img src="./assets/linkedin_qrcode.jpeg" alt="LinkedIn QR Code" style="width:300px;height:300px;border-radius:10px;box-shadow:0 4px 16px #0003;">
+          </a>
+          <span style="margin-top:1em;font-size:1.2em;font-weight:bold;color:#ffffff;">Linkedin</span>
+        </div>
       </div>
     </section>
 
@@ -111,18 +118,28 @@
       // Language content
       const content = {
         en: {
+          sidebarH1: 'Caique Moura',
+          sidebarP: 'Software Developer',
+          sidebarAbout: 'About',
+          sidebarProjects: 'Projects',
+          sidebarContact: 'Contact',
           aboutTitle: 'About Me',
-          about1: `I’m a 4th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications that leverage Natural Language Processing (NLP) and Artificial Intelligence (AI). I'm passionate about creating innovative solutions and turning data into smart, scalable features that drive real impact.`,
-          about2: `I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I conduct projects into natural language processing and artificial intelligence.`,
+          about1: `I’m a 5th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications that leverage Natural Language Processing (NLP) and Artificial Intelligence (AI). I'm passionate about creating innovative solutions and turning data into smart, scalable features that drive real impact.`,
+          about2: `I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I conduct projects into natural language processing and machine learning.`,
           projectsTitle: 'Principal Works',
           contactTitle: 'Contact',
           contactText: `Feel free to reach out via <a href="mailto:caique.fred@outlook.com">email</a> or connect on <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
           langLabel: 'English/Português'
         },
         pt: {
+          sidebarH1: 'Caique Moura',
+          sidebarP: 'Desenvolvedor de Software',
+          sidebarAbout: 'Sobre',
+          sidebarProjects: 'Projetos',
+          sidebarContact: 'Contato',
           aboutTitle: 'Sobre Mim',
-          about1: `Sou estudante do 4º semestre de Desenvolvimento de Software Multiplataforma na Faculdade de Tecnologia do Estado de São Paulo (FATEC/Jacareí). Atualmente trabalho desenvolvendo aplicações que utilizam Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA). Sou apaixonado por criar soluções inovadoras e transformar dados em funcionalidades inteligentes e escaláveis que geram impacto real.`,
-          about2: `Também sou bolsista de iniciação tecnológica no Instituto Nacional de Pesquisas Espaciais (INPE/Brasil), onde realizo projetos em processamento de linguagem natural e inteligência artificial.`,
+          about1: `Sou estudante do 5º semestre de Desenvolvimento de Software Multiplataforma na Faculdade de Tecnologia do Estado de São Paulo (FATEC/Jacareí). Atualmente trabalho desenvolvendo aplicações que utilizam Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA). Sou apaixonado por criar soluções inovadoras e transformar dados em funcionalidades inteligentes e escaláveis que geram impacto real.`,
+          about2: `Também sou bolsista de iniciação tecnológica no Instituto Nacional de Pesquisas Espaciais (INPE/Brasil), onde realizo projetos em processamento de linguagem natural e aprendizagem de máquina.`,
           projectsTitle: 'Principais Trabalhos',
           contactTitle: 'Contato',
           contactText: `Fique à vontade para entrar em contato por <a href="mailto:caique.fred@outlook.com">email</a> ou conectar-se no <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
@@ -135,19 +152,25 @@
 
       // Language switch logic
       langSwitch.addEventListener('change', () => {
-        isPT = langSwitch.checked;
-        const lang = isPT ? 'pt' : 'en';
-        // About section
-        document.querySelector('#about h2').textContent = content[lang].aboutTitle;
-        document.querySelectorAll('#about p')[0].textContent = content[lang].about1;
-        document.querySelectorAll('#about p')[1].textContent = content[lang].about2;
-        // Projects section
-        document.querySelector('#projects h2').textContent = content[lang].projectsTitle;
-        // Contact section
-        document.querySelector('#contact h2').textContent = content[lang].contactTitle;
-        document.querySelector('#contact p').innerHTML = content[lang].contactText;
-        // Label
-        langLabel.textContent = content[lang].langLabel;
+  isPT = langSwitch.checked;
+  const lang = isPT ? 'pt' : 'en';
+  // Sidebar
+  document.querySelector('.sidebar h1').textContent = content[lang].sidebarH1;
+  document.querySelector('.sidebar p').textContent = content[lang].sidebarP;
+  document.querySelector('.sidebar a[data-target="about"]').textContent = content[lang].sidebarAbout;
+  document.querySelector('.sidebar a[data-target="projects"]').textContent = content[lang].sidebarProjects;
+  document.querySelector('.sidebar a[data-target="contact"]').textContent = content[lang].sidebarContact;
+  // About section
+  document.querySelector('#about h2').textContent = content[lang].aboutTitle;
+  document.querySelectorAll('#about p')[0].textContent = content[lang].about1;
+  document.querySelectorAll('#about p')[1].textContent = content[lang].about2;
+  // Projects section
+  document.querySelector('#projects h2').textContent = content[lang].projectsTitle;
+  // Contact section
+  document.querySelector('#contact h2').textContent = content[lang].contactTitle;
+  document.querySelector('#contact p').innerHTML = content[lang].contactText;
+  // Label
+  langLabel.textContent = content[lang].langLabel;
       });
 
       // Navigation logic
