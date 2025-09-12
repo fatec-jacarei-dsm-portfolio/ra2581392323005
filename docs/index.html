@@ -118,28 +118,40 @@
       // Language content
       const content = {
         en: {
+          projectDesc: [
+            'A health and care platform for managing user engagement and analytics in real time.',
+            'Customizable dashboard solution for data visualization focused on spatial analytics companies.',
+            'An iterative platform to learn about agile methods, focused on learning SCRUM principles.',
+            'A platform to track and process geo-referencial information about sea buoys.'
+          ],
           sidebarH1: 'Caique Moura',
           sidebarP: 'Software Developer',
           sidebarAbout: 'About',
           sidebarProjects: 'Projects',
           sidebarContact: 'Contact',
           aboutTitle: 'About Me',
-          about1: `I’m a 5th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications that leverage Natural Language Processing (NLP) and Artificial Intelligence (AI). I'm passionate about creating innovative solutions and turning data into smart, scalable features that drive real impact.`,
-          about2: `I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I conduct projects into natural language processing and machine learning.`,
+          about1: `I’m a 5th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications that leverage Natural Language Processing (NLP) and Machine Learning (ML). I'm passionate about creating innovative solutions and turning data into smart, scalable features that drive real impact.`,
+          about2: `I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I conduct projects into UX data analysis.`,
           projectsTitle: 'Principal Works',
           contactTitle: 'Contact',
           contactText: `Feel free to reach out via <a href="mailto:caique.fred@outlook.com">email</a> or connect on <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
           langLabel: 'English/Português'
         },
         pt: {
+          projectDesc: [
+            'Uma plataforma de saúde e cuidados para gerenciar engajamento e análises de usuários em tempo real.',
+            'Solução de dashboard personalizável para visualização de dados focada em empresas de análise espacial.',
+            'Plataforma iterativa para aprender métodos ágeis, focada em ensinar princípios do SCRUM.',
+            'Uma plataforma para rastrear e processar informações georreferenciadas sobre boias marítimas.'
+          ],
           sidebarH1: 'Caique Moura',
           sidebarP: 'Desenvolvedor de Software',
           sidebarAbout: 'Sobre',
           sidebarProjects: 'Projetos',
           sidebarContact: 'Contato',
           aboutTitle: 'Sobre Mim',
-          about1: `Sou estudante do 5º semestre de Desenvolvimento de Software Multiplataforma na Faculdade de Tecnologia do Estado de São Paulo (FATEC/Jacareí). Atualmente trabalho desenvolvendo aplicações que utilizam Processamento de Linguagem Natural (PLN) e Inteligência Artificial (IA). Sou apaixonado por criar soluções inovadoras e transformar dados em funcionalidades inteligentes e escaláveis que geram impacto real.`,
-          about2: `Também sou bolsista de iniciação tecnológica no Instituto Nacional de Pesquisas Espaciais (INPE/Brasil), onde realizo projetos em processamento de linguagem natural e aprendizagem de máquina.`,
+          about1: `Sou estudante do 5º semestre de Desenvolvimento de Software Multiplataforma na Faculdade de Tecnologia do Estado de São Paulo (FATEC/Jacareí). Atualmente trabalho desenvolvendo aplicações que utilizam Processamento de Linguagem Natural (PLN) e Aprendizagem de máquina (AM). Sou apaixonado por criar soluções inovadoras e transformar dados em funcionalidades inteligentes e escaláveis que geram impacto real.`,
+          about2: `Também sou bolsista de iniciação tecnológica no Instituto Nacional de Pesquisas Espaciais (INPE/Brasil), onde realizo projetos focados na obtenção e análise de dados de Experiência do Usuário.`,
           projectsTitle: 'Principais Trabalhos',
           contactTitle: 'Contato',
           contactText: `Fique à vontade para entrar em contato por <a href="mailto:caique.fred@outlook.com">email</a> ou conectar-se no <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
@@ -166,6 +178,10 @@
   document.querySelectorAll('#about p')[1].textContent = content[lang].about2;
   // Projects section
   document.querySelector('#projects h2').textContent = content[lang].projectsTitle;
+  const projectCards = document.querySelectorAll('.project-card .project-description p');
+  content[lang].projectDesc.forEach((desc, i) => {
+    if (projectCards[i]) projectCards[i].textContent = desc;
+  });
   // Contact section
   document.querySelector('#contact h2').textContent = content[lang].contactTitle;
   document.querySelector('#contact p').innerHTML = content[lang].contactText;
