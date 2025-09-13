@@ -1,4 +1,13 @@
-
+@media (max-width: 900px) {
+  #contact > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2em !important;
+  }
+  #contact > div > div {
+    margin-bottom: 2em;
+  }
+}
 /* Reset and base styles */
 * {
   margin: 0;
@@ -81,7 +90,7 @@ body {
   background: #fbff00;
 }
 
-.sidebar #lang-switch .switch-knob {
+/* .sidebar #lang-switch .switch-knob {
   margin-left: 3rem;
   position: absolute;
   top: 4px;
@@ -100,7 +109,7 @@ body {
 }
 .sidebar #lang-switch.active .switch-knob {
   transform: translateX(32px);
-}
+} */
 
 .sidebar h1 {
   margin-left: 3rem;
@@ -139,12 +148,14 @@ body {
 /* Main content */
 .content {
   margin-top: 3rem;
-  margin-left: 250px;
+  margin-left: 300px;
+  margin-right: 40px;
   padding: 2rem;
   flex: 1;
 }
 
 .container {
+  padding: auto;
   max-width: 960px;
   margin: auto;
   display: none;
