@@ -7,6 +7,56 @@
   #contact > div > div {
     margin-bottom: 2em;
   }
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-pic {
+    width: 140px !important;
+    height: 140px !important;
+    margin: 20px auto !important;
+  }
+  .sidebar h1,
+  .sidebar p {
+    margin-left: 0;
+  }
+  .sidebar nav ul {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .sidebar nav ul li {
+    margin-bottom: 0;
+  }
+  .sidebar-lang-switch {
+    margin-left: 0;
+    justify-content: center;
+  }
+  .content {
+    margin: 1rem 0 0;
+    padding: 1.5rem;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .project-card img {
+    height: 180px;
+  }
+  #contact img {
+    width: 220px !important;
+    height: 220px !important;
+  }
 }
 /* Reset and base styles */
 * {
@@ -227,6 +277,15 @@ body {
   margin-top: 50px;
 }
 
+.mobile-single .container {
+  display: block;
+  animation: none;
+}
+
+.mobile-single .container.active {
+  margin-top: 0;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -408,6 +467,67 @@ section h2 {
   }
   .project-description {
     transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-pic {
+    width: 140px !important;
+    height: 140px !important;
+    margin: 20px auto !important;
+  }
+  .sidebar h1,
+  .sidebar p {
+    margin-left: 0 !important;
+  }
+  .sidebar nav ul {
+    margin-left: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .sidebar nav ul li {
+    margin-bottom: 0;
+  }
+  .sidebar-lang-switch {
+    margin-left: 0 !important;
+    justify-content: center;
+  }
+  .content {
+    margin: 1rem 0 0 !important;
+    padding: 1.5rem !important;
+  }
+  .container {
+    max-width: 100% !important;
+  }
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .project-card img {
+    height: 180px;
+  }
+  #contact img {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  #contact > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2em !important;
+  }
+  #contact > div > div {
+    margin-bottom: 2em;
   }
 }
 

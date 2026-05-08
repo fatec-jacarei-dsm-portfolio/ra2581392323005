@@ -474,9 +474,27 @@
         setHtml('#contact .contact-intro', content[lang].contactText);
       })();
 
+      const applyMobileLayout = () => {
+        const isMobile = window.matchMedia('(max-width: 900px)').matches;
+        document.body.classList.toggle('mobile-single', isMobile);
+        if (isMobile) {
+          sections.forEach(section => section.classList.add('active'));
+        } else {
+          sections.forEach(section => section.classList.remove('active'));
+          const firstSection = document.querySelector('main > section');
+          if (firstSection) firstSection.classList.add('active');
+        }
+      };
+
+      applyMobileLayout();
+      window.addEventListener('resize', applyMobileLayout);
+
       // Navigation logic
       links.forEach(link => {
         link.addEventListener('click', e => {
+          if (document.body.classList.contains('mobile-single')) {
+            return;
+          }
           e.preventDefault();
           const targetId = link.getAttribute('data-target');
           sections.forEach(section => {
