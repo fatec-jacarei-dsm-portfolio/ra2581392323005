@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caique Moura - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,12 +19,13 @@
       <ul>
         <li><a href="#" data-target="about">About</a></li>
         <li><a href="#" data-target="projects">Projects</a></li>
+        <li><a href="#" data-target="other">Other Info</a></li>
         <li><a href="#" data-target="contact">Contact</a></li>
       </ul>
     </nav>
     <div class="sidebar-lang-switch">
       <label class="switch">
-        <input type="checkbox" id="lang-switch" style="display:none;">
+        <input type="checkbox" id="lang-switch" style="display:none;" aria-label="Toggle language">
         <span class="slider"></span>
       </label>
       
@@ -32,68 +36,139 @@
   <main class="content">
     <section id="about" class="container active">
       <h2>About Me</h2>
-      <p>I’m a 4th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological
-        Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications
-        that leverage Natural Language Processing (NLP) and Artificial Intelligence (AI). I'm passionate about creating
-        innovative solutions and turning data into smart, scalable features that drive real impact.</p>
-      <br>
-      <p>I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I
-        conduct projects into natural language processing and artificial intelligence.</p>
+      <div id="about-content"></div>
     </section>
 
     <section id="projects" class="container">
-      <h2>Academic Projects</h2>
-      <div class="projects">
-        <a class="project-link" href="https://github.com/orgs/candago-3/repositories" target="_blank">
-          <article class="project-card">
-            <img src="./assets/gejup.png" alt="GejUp Screenshot">
-            <div class="project-description">
-              <h3>GejUp</h3>
-              <p>A health and care platform for managing user engagement and analytics in real time.</p>
-            </div>
-          </article>
-        </a>
-        <a class="project-link" href="https://github.com/orgs/candago-2/repositories" target="_blank">
-          <article class="project-card">
-            <img src="./assets/visiona.png" alt="VisionaDashboards Screenshot">
-            <div class="project-description">
-              <h3>VisionaDashboards</h3>
-              <p>Customizable dashboard solution for data visualization focused on spatial analytics companies.</p>
-            </div>
-          </article>
-        </a>
-        <a class="project-link" href="https://github.com/caiquefrd/CandagoScrum" target="_blank">
-          <article class="project-card">
-            <img src="./assets/candago.png" alt="CandagoScrum Screenshot">
-            <div class="project-description">
-              <h3>CandagoScrum</h3>
-              <p>An iterative platform to learn about agile methods, focused on learning SCRUM principles.</p>
-            </div>
-          </article>
-        </a>
-        <a class="project-link" href="https://github.com/candago-4/documentacao" target="_blank">
-          <article class="project-card">
-            <img src="./assets/lynch_area.jpeg" alt="LynchArea Screenshot">
-            <div class="project-description">
-              <h3>LynchArea</h3>
-              <p>An platform to track and process geo-referencial information about sea buoys.</p>
-            </div>
-          </article>
-        </a>
-        <a class="project-link" href="https://github.com/candago-5/ml" target="_blank">
-          <article class="project-card">
-            <img src="./assets/dogspotter.png" alt="DogSpotter Screenshot">
-            <div class="project-description">
-              <h3>DogSpotter</h3>
-              <p>A mobile application to search and identify lost dogs.</p>
-            </div>
-          </article>
-        </a>
+      <div class="projects-category">
+        <h3 class="projects-category-title" data-category="academic">Academic</h3>
+        <div class="projects">
+          <a class="project-link" href="https://github.com/orgs/candago-3/repositories" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="gejup">
+              <img src="./assets/gejup.png" alt="GejUp Screenshot">
+              <h4 class="project-title">GejUp</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="https://github.com/orgs/candago-2/repositories" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="visionaDashboards">
+              <img src="./assets/visiona.png" alt="VisionaDashboards Screenshot">
+              <h4 class="project-title">VisionaDashboards</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="https://github.com/caiquefrd/CandagoScrum" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="candagoScrum">
+              <img src="./assets/candago.png" alt="CandagoScrum Screenshot">
+              <h4 class="project-title">CandagoScrum</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="https://github.com/candago-4/documentacao" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="lynchArea">
+              <img src="./assets/lynch_area.jpeg" alt="LynchArea Screenshot">
+              <h4 class="project-title">LynchArea</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="https://github.com/candago-5/ml" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="dogSpotter">
+              <img src="./assets/dogspotter.png" alt="DogSpotter Screenshot">
+              <h4 class="project-title">DogSpotter</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="https://github.com/orgs/candago-6/repositories" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="proconBot" aria-label="ProconBOT project">
+              <img src="./assets/proconBOT.jpg" alt="ProconBOT Screenshot">
+              <h4 class="project-title">ProconBOT</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+        </div>
       </div>
+
+      <div class="projects-category">
+        <h3 class="projects-category-title" data-category="professional">Professional</h3>
+        <div class="projects">
+          <a class="project-link" href="https://data.inpe.br/queimadas/sisam/" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-project-key="sisam" aria-label="SISAM project">
+              <img src="./assets/sisam.png" alt="SISAM Screenshot">
+              <h4 class="project-title">SISAM</h4>
+              <div class="project-description">
+                <p class="project-desc"></p>
+                <p><span class="project-label role-label">My role:</span> <span class="project-role"></span></p>
+                <p><span class="project-label tech-label">Technologies:</span> <span class="project-tech"></span></p>
+              </div>
+              <div class="project-expand">
+                <img src="./assets/expand_arrow.png" alt="Expand project details">
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+
+      <div class="projects-category">
+        <h3 class="projects-category-title" data-category="personal">Personal</h3>
+        <p class="empty-state" data-empty="personal">No personal projects listed yet.</p>
+      </div>
+    </section>
+
+    <section id="other" class="container">
+      <h2>Other Information</h2>
+      <div id="other-content"></div>
     </section>
 
     <section id="contact" class="container">
       <h2>Contact</h2>
+      <p class="contact-intro"></p>
       <div style="margin-top:5em;display:flex;justify-content:center;align-items:flex-start;gap:2em;">
         <div style="display:flex;flex-direction:column;align-items:center;">
           <a href="https://github.com/caiquefrd" target="_blank" rel="noopener" title="GitHub Profile">
@@ -128,43 +203,175 @@
       // Language content
       const content = {
         en: {
-          projectDesc: [
-            'A health and care platform for managing user engagement and analytics in real time.',
-            'Customizable dashboard solution for data visualization focused on spatial analytics companies.',
-            'An iterative platform to learn about agile methods, focused on learning SCRUM principles.',
-            'A platform to track and process geo-referencial information about sea buoys.',
-            'A mobile application to search and identify lost dogs.'
-          ],
           sidebarH1: 'Caique Moura',
           sidebarP: 'Software Developer',
           sidebarAbout: 'About',
           sidebarProjects: 'Projects',
+          sidebarOther: 'Other Info',
           sidebarContact: 'Contact',
           aboutTitle: 'About Me',
-          about1: `I’m a 5th-semester student of Multiplatform Software Development at Paula Souza State Centre for Technological Education (CEETEPS)/São Paulo State Technology College (FATEC/Jacareí). Currently, I work on building applications that leverage Natural Language Processing (NLP) and Machine Learning (ML). I'm passionate about creating innovative solutions and turning data into smart, scalable features that drive real impact.`,
-          about2: `I am also a technological initiation student at the National Institute for Space Research (INPE/Brazil), where I conduct projects into UX data analysis.`,
-          projectsTitle: 'Academic Projects',
+          aboutHtml: `
+            <div class="about-block">
+              <h3 class="about-kicker">Where I Am Now</h3>
+              <p class="about-lead">I’m a software developer and a 5th-semester student of Multiplatform Software Development at FATEC Jacareí (CEETEPS). My goal is to grow into a data scientist, and I’ve been intentionally steering my education and projects toward machine learning and AI.</p>
+            </div>
+            <div class="about-block">
+              <h3 class="about-kicker">How I Got Here</h3>
+              <p>In 2024, I started working with Natural Language Processing by building practical solutions. Over time, that foundation evolved into applied ML, and today I develop custom text-generation models (LLMs) using fine-tuning and retrieval-augmented generation (RAG). The focus is simple: deliver answers grounded in context that matches the day-to-day reality of a work environment.</p>
+            </div>
+            <div class="about-block">
+              <h3 class="about-kicker">What I Do at INPE</h3>
+              <p>Alongside my degree, I’m a technological initiation student at INPE (Brazil), working on NLP and AI projects. One of these initiatives is <strong>SISAM</strong>, focused on air-quality monitoring in partnership with Brazil’s Ministry of Health—where I apply fine-tuning and RAG to build context-aware text generation. This experience helps me connect software engineering (APIs, microservices, data flows) with applied data science (experimentation, evaluation, and production delivery).</p>
+            </div>
+          `,
+          projectsTitle: 'Projects',
+          projectsCatAcademic: 'Academic',
+          projectsCatProfessional: 'Professional',
+          projectsCatPersonal: 'Personal',
+          projectsEmptyProfessional: 'No professional projects listed yet.',
+          projectsEmptyPersonal: 'No personal projects listed yet.',
+          projectRoleLabel: 'My role:',
+          projectTechLabel: 'Technologies:',
+          projects: {
+            gejup: {
+              desc: 'A health and care platform for managing user engagement and analytics in real time.',
+              role: 'Backend development, database integration, API development, and CRUD operations.',
+              tech: 'JavaScript, TypeScript, MongoDB'
+            },
+            visionaDashboards: {
+              desc: 'Customizable dashboard solution for data visualization focused on spatial analytics companies.',
+              role: 'Backend development, database integration, API development, and CRUD operations.',
+              tech: 'JavaScript, TypeScript, PostgreSQL, React'
+            },
+            candagoScrum: {
+              desc: 'An iterative platform to learn about agile methods, focused on learning SCRUM principles.',
+              role: 'Frontend development for static pages.',
+              tech: 'JavaScript, HTML, CSS'
+            },
+            lynchArea: {
+              desc: 'A platform to track and process geo-referential information about sea buoys.',
+              role: 'Backend development: database integration, API development, and CRUD operations.',
+              tech: 'React, TypeScript, PostgreSQL'
+            },
+            dogSpotter: {
+              desc: 'A mobile application to search and identify lost dogs.',
+              role: 'Computer-vision ML algorithms: training, validation, and deployment using fine-tuning of pre-trained models.',
+              tech: 'Python, React, PostgreSQL, Azure'
+            },
+            proconBot: {
+              desc: 'Automated support system for citizens of Jacareí-SP, using Natural Language Processing and Machine Learning.',
+              role: 'Microservices development to receive, process, and return text responses.',
+              tech: 'Python'
+            },
+            sisam: {
+              desc: 'Air-quality monitoring initiative in partnership with Brazil\'s Ministry of Health.',
+              role: 'Developing contextualized descriptions of Brazilian municipalities.',
+              tech: 'Python, PostgreSQL, Redis, microservices, OOP, RAG, LLMs, fine-tuning'
+            }
+          },
+          otherTitle: 'Other Information',
+          otherHtml: `
+            <h3>Education</h3>
+            <div class="other-section">
+              <p>Final semester of Multiplatform Software Development at FATEC Jacareí.</p>
+              <p>Taking individual postgraduate (master’s level) courses in Applied Computing at INPE.</p>
+            </div>
+            <h3>Interests & hobbies</h3>
+            <div class="other-section">
+              <p>Video games, TV series, movies, sports.</p>
+            </div>
+            <h3>Languages</h3>
+            <div class="other-section">
+              <p>Portuguese and English.</p>
+            </div>
+          `,
           contactTitle: 'Contact',
           contactText: `Feel free to reach out via <a href="mailto:caique.fred@outlook.com">email</a> or connect on <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
           langLabel: 'English/Português'
         },
         pt: {
-          projectDesc: [
-            'Uma plataforma de saúde e cuidados para gerenciar engajamento e análises de usuários em tempo real.',
-            'Solução de dashboard personalizável para visualização de dados focada em empresas de análise espacial.',
-            'Plataforma iterativa para aprender métodos ágeis, focada em ensinar princípios do SCRUM.',
-            'Uma plataforma para rastrear e processar informações georreferenciadas sobre boias marítimas.',
-            'Aplicativo móvel para localizar cachorros perdidos.'
-          ],
           sidebarH1: 'Caique Moura',
           sidebarP: 'Desenvolvedor de Software',
           sidebarAbout: 'Sobre',
           sidebarProjects: 'Projetos',
+          sidebarOther: 'Outras infos',
           sidebarContact: 'Contato',
           aboutTitle: 'Sobre Mim',
-          about1: `Sou estudante do 5º semestre de Desenvolvimento de Software Multiplataforma na Faculdade de Tecnologia do Estado de São Paulo (FATEC/Jacareí). Atualmente trabalho desenvolvendo aplicações que utilizam Processamento de Linguagem Natural (PLN) e Aprendizagem de máquina (AM). Sou apaixonado por criar soluções inovadoras e transformar dados em funcionalidades inteligentes e escaláveis que geram impacto real.`,
-          about2: `Também sou bolsista de iniciação tecnológica no Instituto Nacional de Pesquisas Espaciais (INPE/Brasil), onde realizo projetos focados na obtenção e análise de dados de Experiência do Usuário.`,
-          projectsTitle: 'Projetos Acadêmicos',
+          aboutHtml: `
+            <div class="about-block">
+              <h3 class="about-kicker">Onde Estou</h3>
+              <p class="about-lead">Atuo como desenvolvedor de software e estou no 5º semestre de Desenvolvimento de Software Multiplataforma na FATEC Jacareí (CEETEPS). Meu objetivo é evoluir para data science, direcionando minha formação e meus projetos para machine learning e inteligência artificial.</p>
+            </div>
+            <div class="about-block">
+              <h3 class="about-kicker">Como Cheguei Aqui</h3>
+              <p>Em 2024, comecei a trabalhar com Processamento de Linguagem Natural criando soluções práticas. Com o tempo, essa base evoluiu para ML aplicado e, hoje, desenvolvo modelos personalizados de geração textual (LLMs) com fine-tuning e RAG. O foco é claro: produzir respostas ancoradas em contexto e alinhadas às necessidades do ambiente real de trabalho.</p>
+            </div>
+            <div class="about-block">
+              <h3 class="about-kicker">O Que Faço no INPE</h3>
+              <p>Em paralelo, sou bolsista de iniciação tecnológica no INPE (Brasil), atuando em projetos de PLN e IA. Entre essas iniciativas está o <strong>SISAM</strong>, voltado ao monitoramento da qualidade do ar em parceria com o Ministério da Saúde — onde aplico fine-tuning e RAG para geração textual com contexto. Essa vivência fortalece a ponte entre engenharia de software (APIs, micro serviços, fluxos de dados) e ciência de dados aplicada (experimentação, avaliação e entrega em produção).</p>
+            </div>
+          `,
+          projectsTitle: 'Projetos',
+          projectsCatAcademic: 'Acadêmicos',
+          projectsCatProfessional: 'Profissionais',
+          projectsCatPersonal: 'Pessoais',
+          projectsEmptyProfessional: 'Nenhum projeto profissional listado ainda.',
+          projectsEmptyPersonal: 'Nenhum projeto pessoal listado ainda.',
+          projectRoleLabel: 'Minha participação:',
+          projectTechLabel: 'Tecnologias:',
+          projects: {
+            gejup: {
+              desc: 'Uma plataforma de saúde e cuidados para gerenciar engajamento e análises de usuários em tempo real.',
+              role: 'Responsável pelo desenvolvimento backend, integração com banco de dados, desenvolvimento de APIs e CRUD.',
+              tech: 'JavaScript, TypeScript, MongoDB'
+            },
+            visionaDashboards: {
+              desc: 'Solução de dashboard personalizável para visualização de dados focada em empresas de análise espacial.',
+              role: 'Responsável pelo desenvolvimento backend, integração com banco de dados, desenvolvimento de APIs e CRUD.',
+              tech: 'JavaScript, TypeScript, PostgreSQL, React'
+            },
+            candagoScrum: {
+              desc: 'Plataforma iterativa para aprender métodos ágeis, focada em ensinar princípios do SCRUM.',
+              role: 'Responsável pelo desenvolvimento frontend de páginas estáticas.',
+              tech: 'JavaScript, HTML, CSS'
+            },
+            lynchArea: {
+              desc: 'Uma plataforma para rastrear e processar informações georreferenciadas sobre boias marítimas.',
+              role: 'Responsável pelo desenvolvimento backend: integração com banco de dados, desenvolvimento de APIs e CRUD.',
+              tech: 'React, TypeScript, PostgreSQL'
+            },
+            dogSpotter: {
+              desc: 'Aplicativo móvel para localizar cachorros perdidos.',
+              role: 'Responsável pelo desenvolvimento de algoritmos de machine learning voltados para visão computacional, treinamento, validação e aplicação utilizando fine tuning de modelos pré-treinados.',
+              tech: 'Python, React, PostgreSQL, Azure'
+            },
+            proconBot: {
+              desc: 'Sistema de atendimento automático para cidadãos da cidade de Jacareí-SP, utilizando processamento de linguagem natural e machine learning.',
+              role: 'Responsável pelo desenvolvimento de micro serviços responsáveis por receber, processar e retornar texto.',
+              tech: 'Python'
+            },
+            sisam: {
+              desc: 'Iniciativa de monitoramento da qualidade do ar em parceria com o Ministério da Saúde.',
+              role: 'Desenvolvimento de descrições contextualizadas de municípios brasileiros.',
+              tech: 'Python, PostgreSQL, Redis, microservices, POO, RAG, LLMs, fine-tuning'
+            }
+          },
+          otherTitle: 'Outras informações',
+          otherHtml: `
+            <h3>Formação acadêmica</h3>
+            <div class="other-section">
+              <p>Cursando o último semestre de Desenvolvimento de Software Multiplataforma pela FATEC Jacareí.</p>
+              <p>Cursando disciplinas isoladas de pós-graduação (mestrado) em Computação Aplicada no INPE.</p>
+            </div>
+            <h3>Hobbies e interesses</h3>
+            <div class="other-section">
+              <p>Video games, séries, filmes, esportes.</p>
+            </div>
+            <h3>Idiomas</h3>
+            <div class="other-section">
+              <p>Português e inglês.</p>
+            </div>
+          `,
           contactTitle: 'Contato',
           contactText: `Fique à vontade para entrar em contato por <a href="mailto:caique.fred@outlook.com">email</a> ou conectar-se no <a href="https://www.linkedin.com/in/caique-moura/" target="_blank">LinkedIn</a>.`,
           langLabel: 'English/Português'
@@ -178,28 +385,94 @@
       langSwitch.addEventListener('change', () => {
   isPT = langSwitch.checked;
   const lang = isPT ? 'pt' : 'en';
+
+  const setText = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = value;
+  };
+  const setHtml = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.innerHTML = value;
+  };
+
   // Sidebar
   document.querySelector('.sidebar h1').textContent = content[lang].sidebarH1;
   document.querySelector('.sidebar p').textContent = content[lang].sidebarP;
   document.querySelector('.sidebar a[data-target="about"]').textContent = content[lang].sidebarAbout;
   document.querySelector('.sidebar a[data-target="projects"]').textContent = content[lang].sidebarProjects;
+  document.querySelector('.sidebar a[data-target="other"]').textContent = content[lang].sidebarOther;
   document.querySelector('.sidebar a[data-target="contact"]').textContent = content[lang].sidebarContact;
   // About section
   document.querySelector('#about h2').textContent = content[lang].aboutTitle;
-  document.querySelectorAll('#about p')[0].textContent = content[lang].about1;
-  document.querySelectorAll('#about p')[1].textContent = content[lang].about2;
+  setHtml('#about-content', content[lang].aboutHtml);
   // Projects section
-  document.querySelector('#projects h2').textContent = content[lang].projectsTitle;
-  const projectCards = document.querySelectorAll('.project-card .project-description p');
-  content[lang].projectDesc.forEach((desc, i) => {
-    if (projectCards[i]) projectCards[i].textContent = desc;
+  setText('#projects h2', content[lang].projectsTitle);
+  setText('.projects-category-title[data-category="academic"]', content[lang].projectsCatAcademic);
+  setText('.projects-category-title[data-category="professional"]', content[lang].projectsCatProfessional);
+  setText('.projects-category-title[data-category="personal"]', content[lang].projectsCatPersonal);
+  setText('.empty-state[data-empty="professional"]', content[lang].projectsEmptyProfessional);
+  setText('.empty-state[data-empty="personal"]', content[lang].projectsEmptyPersonal);
+  document.querySelectorAll('.role-label').forEach(el => el.textContent = content[lang].projectRoleLabel);
+  document.querySelectorAll('.tech-label').forEach(el => el.textContent = content[lang].projectTechLabel);
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    const key = card.getAttribute('data-project-key');
+    const project = content[lang].projects[key];
+    if (!project) return;
+    const descEl = card.querySelector('.project-desc');
+    const roleEl = card.querySelector('.project-role');
+    const techEl = card.querySelector('.project-tech');
+    if (descEl) descEl.textContent = project.desc;
+    if (roleEl) roleEl.textContent = project.role;
+    if (techEl) techEl.textContent = project.tech;
   });
+
+  // Other section
+  document.querySelector('#other h2').textContent = content[lang].otherTitle;
+  document.getElementById('other-content').innerHTML = content[lang].otherHtml;
   // Contact section
   document.querySelector('#contact h2').textContent = content[lang].contactTitle;
-  document.querySelector('#contact p').innerHTML = content[lang].contactText;
+  setHtml('#contact .contact-intro', content[lang].contactText);
   // Label
   langLabel.textContent = content[lang].langLabel;
       });
+
+      // Initialize dynamic fields once on load
+      (() => {
+        const lang = 'en';
+        const setText = (selector, value) => {
+          const el = document.querySelector(selector);
+          if (el) el.textContent = value;
+        };
+        const setHtml = (selector, value) => {
+          const el = document.querySelector(selector);
+          if (el) el.innerHTML = value;
+        };
+
+        setHtml('#about-content', content[lang].aboutHtml);
+        setText('#projects h2', content[lang].projectsTitle);
+        setText('.projects-category-title[data-category="academic"]', content[lang].projectsCatAcademic);
+        setText('.projects-category-title[data-category="professional"]', content[lang].projectsCatProfessional);
+        setText('.projects-category-title[data-category="personal"]', content[lang].projectsCatPersonal);
+        setText('.empty-state[data-empty="professional"]', content[lang].projectsEmptyProfessional);
+        setText('.empty-state[data-empty="personal"]', content[lang].projectsEmptyPersonal);
+        document.querySelectorAll('.role-label').forEach(el => el.textContent = content[lang].projectRoleLabel);
+        document.querySelectorAll('.tech-label').forEach(el => el.textContent = content[lang].projectTechLabel);
+        document.querySelectorAll('.project-card').forEach(card => {
+          const key = card.getAttribute('data-project-key');
+          const project = content[lang].projects[key];
+          if (!project) return;
+          const descEl = card.querySelector('.project-desc');
+          const roleEl = card.querySelector('.project-role');
+          const techEl = card.querySelector('.project-tech');
+          if (descEl) descEl.textContent = project.desc;
+          if (roleEl) roleEl.textContent = project.role;
+          if (techEl) techEl.textContent = project.tech;
+        });
+        setText('#other h2', content[lang].otherTitle);
+        setHtml('#other-content', content[lang].otherHtml);
+        setHtml('#contact .contact-intro', content[lang].contactText);
+      })();
 
       // Navigation logic
       links.forEach(link => {
